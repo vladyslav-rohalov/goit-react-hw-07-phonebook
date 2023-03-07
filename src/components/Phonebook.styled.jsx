@@ -1,12 +1,22 @@
 import styled from '@emotion/styled';
+import { TiDelete } from 'react-icons/ti';
+const bgi = require('../images/phone.png');
+
+export const Frame = styled.div`
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: auto;
+  max-height: 100vh;
+  padding: 30px;
+  background-image: url(${bgi});
+  background-size: contain;
+  background-repeat: no-repeat;
+`;
 
 export const Container = styled.div`
-  width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: aliceblue;
+  max-height: 80vh;
 `;
 
 export const TitleH1 = styled.h1`
@@ -55,8 +65,11 @@ export const Button = styled.button`
 `;
 
 export const List = styled.ul`
+  min-height: 40vh;
+  max-height: 40vh;
   list-style: none;
   padding: 0;
+  overflow: hidden;
 `;
 
 export const ListItem = styled.li`
@@ -70,27 +83,27 @@ export const ListBtn = styled.button`
   height: 20px;
   width: 20px;
   align-self: center;
-  border-radius: 50%;
-  border: 1px solid rgb(231, 50, 50);
-  background-color: #fff;
+  background-color: transparent;
+  border: none;
   cursor: pointer;
-  box-shadow: 0 0 5px #333;
   overflow: hidden;
-  transition: 0.3s;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     background-color: rgb(245, 207, 207);
-    transform: scale(1.2);
-    box-shadow: 0 0 4px #111;
-    transition: 0.3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 2px #111;
+    transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;
 
-export const Svg = styled.svg`
+export const IconDel = styled(TiDelete)`
+  width: 100%;
+  height: 100%;
   color: rgb(231, 50, 50);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: 0.3s;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
 `;

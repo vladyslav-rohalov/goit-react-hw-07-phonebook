@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'Redux/Operations';
 import { getContacts } from 'Redux/Selectors';
-import { addContact } from 'Redux/contactsSlice';
 import { Form, Label, Input, Button } from './Phonebook.styled';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactForm() {
   const dispatch = useDispatch();
-  const { items } = useSelector(getContacts);
+  const items = useSelector(getContacts);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -16,12 +16,12 @@ export default function ContactForm() {
     const phone = form.elements.number.value;
     const contact = {
       name: name,
-      number: phone,
+      phone: phone,
     };
     twinCheck(name, contact);
-
     form.reset();
   };
+
   const twinCheck = (newContactName, contact) => {
     let isTwin = items.find(prevContact => {
       if (prevContact.name === newContactName) {
