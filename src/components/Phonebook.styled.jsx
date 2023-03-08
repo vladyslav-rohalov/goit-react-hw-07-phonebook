@@ -3,19 +3,36 @@ import { TiDelete } from 'react-icons/ti';
 import { MdOutlineRadioButtonChecked } from 'react-icons/md';
 import { GrUserAdd } from 'react-icons/gr';
 import { GoSearch } from 'react-icons/go';
+import { AiOutlinePlus } from 'react-icons/ai';
+const backdrop = require('../backdrop.webp');
+
+export const Backdrop = styled.div`
+  height: 100vh;
+  background-color: #92a0ad;
+`;
 
 export const Frame = styled.div`
   position: fixed;
   display: flex;
   flex-direction: column;
-  top: 0;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 0);
-  width: 350px;
+  transform: translate(-50%, -50%);
+  width: 300px;
   max-height: 100vh;
   padding: 0 30px 30px;
   border: 5px solid black;
   border-radius: 25px;
+  overflow-y: auto;
+  background-image: url(${backdrop});
+  background-size: cover;
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
   &::before {
     content: '';
     position: fixed;
@@ -54,22 +71,51 @@ export const Camera = styled(MdOutlineRadioButtonChecked)`
 
 export const IconAddContact = styled(GrUserAdd)``;
 
+export const IconCross = styled(AiOutlinePlus)``;
+
 export const Container = styled.div`
   max-height: 80vh;
 `;
 
 export const TitleH1 = styled.h1`
+  color: #ffffffcc;
   text-align: center;
 `;
 
 export const TitleH2 = styled.h2`
+  color: #ffffffcc;
   text-align: center;
+`;
+
+export const ContainerForm = styled.div`
+  display: flex;
+`;
+
+export const AddButton = styled.button`
+  display: flex;
+  justify-items: center;
+  width: 128px;
+  height: 32px;
+  border: none;
+  box-shadow: 0px 0px 1px 0px rgb(0 0 0 / 75%);
+  border-radius: 8px;
+  font-size: 16px;
+  align-items: center;
+  margin: 0 auto;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(27, 0, 233, 1) 100%
+  );
+  color: #ffffff;
 `;
 
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 `;
 
 export const Label = styled.label`
@@ -84,6 +130,7 @@ export const Input = styled.input`
   padding-left: 30px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 8px;
+  background-color: #ffffffcc;
   &:focus {
     outline: none;
     border: 1px solid #2196f3;
@@ -124,13 +171,26 @@ export const SearchIcon = styled(GoSearch)`
   pointer-events: none;
 `;
 
-export const List = styled.div`
-  height: 40vh;
-  overflow-y: auto;
+export const List = styled.ul`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
 `;
 
-export const Table = styled.table`
-  width: 100%;
+export const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
+  padding: 0 8px;
+  background-color: #ffffffcc;
+`;
+
+export const TableRow = styled.tr`
+  font-size: 12px;
+  border: 1px solid black;
 `;
 
 export const ListBtn = styled.button`

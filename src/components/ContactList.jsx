@@ -8,7 +8,7 @@ import {
 import { useEffect } from 'react';
 import { fetchContacts } from 'Redux/Operations';
 import { delContact } from 'Redux/Operations';
-import { List, Table, ListBtn, IconDel } from './Phonebook.styled';
+import { List, ListItem, ListBtn, IconDel } from './Phonebook.styled';
 
 export default function ContactList() {
   const items = useSelector(getContacts);
@@ -26,43 +26,25 @@ export default function ContactList() {
   }, [dispatch]);
 
   return (
-    <List>
+    <div>
       {isLoading && <p>Loading contacts...</p>}
       {error && <p>{error}</p>}
       {items.length > 0 && (
-        <Table>
+        <List>
           {filtredPhonebook.map(({ id, name, phone }) => {
             return (
-              <tr key={id}>
-                <td>{name}</td>
-                <td>{phone}</td>
-                <td>
-                  <ListBtn
-                    type="button"
-                    onClick={() => dispatch(delContact(id))}
-                  >
-                    <IconDel />
-                  </ListBtn>
-                </td>
-              </tr>
+              <ListItem key={id}>
+                <p>
+                  {name}: {phone}
+                </p>
+                <ListBtn type="button" onClick={() => dispatch(delContact(id))}>
+                  <IconDel />
+                </ListBtn>
+              </ListItem>
             );
           })}
-        </Table>
-        // <List>
-        //   {filtredPhonebook.map(({ id, name, phone }) => {
-        //     return (
-        //       <ListItem key={id}>
-        //         <p>
-        //           {name}: {phone}
-        //         </p>
-        //         <ListBtn type="button" onClick={() => dispatch(delContact(id))}>
-        //           <IconDel />
-        //         </ListBtn>
-        //       </ListItem>
-        //     );
-        //   })}
-        // </List>
+        </List>
       )}
-    </List>
+    </div>
   );
 }
