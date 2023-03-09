@@ -4,6 +4,8 @@ import { MdOutlineRadioButtonChecked } from 'react-icons/md';
 import { GrUserAdd } from 'react-icons/gr';
 import { GoSearch } from 'react-icons/go';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { IoMdFingerPrint } from 'react-icons/io';
+
 const backdrop = require('../backdrop.webp');
 
 export const Backdrop = styled.div`
@@ -19,6 +21,7 @@ export const Frame = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 300px;
+  height: 80vh;
   max-height: 100vh;
   padding: 0 30px 30px;
   border: 5px solid black;
@@ -68,6 +71,53 @@ export const Camera = styled(MdOutlineRadioButtonChecked)`
   height: 40px;
   margin: 0 auto;
 `;
+
+//Locked screen
+export const Locked = styled.div`
+  position: absolute;
+  display: flex;
+  left: 0;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+`;
+
+export const TimeDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: 10vh;
+  margin: 0 auto;
+  align-items: center;
+  color: white;
+`;
+
+export const UnlockButton = styled.button`
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  background-color: black;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+`;
+
+export const IconFingerPrint = styled(IoMdFingerPrint)`
+  width: 80px;
+  height: 80px;
+  fill: white;
+`;
+
+export const DisplayTime = styled.p`
+  font-size: 60px;
+  margin: 0;
+`;
+
+export const DisplayDate = styled.p`
+  font-size: 20px;
+`;
+
+// =/Locked screen
 
 export const IconAddContact = styled(GrUserAdd)``;
 
