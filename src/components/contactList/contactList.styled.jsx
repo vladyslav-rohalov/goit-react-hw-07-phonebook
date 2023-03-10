@@ -3,16 +3,14 @@ import { Link } from 'react-router-dom';
 
 export const ContactsContainer = styled.div`
   width: calc(100% - 20px);
-  margin: 0 auto;
+  margin: 0 auto 2em;
 `;
 
 export const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 50vh;
   list-style: none;
-  padding: 0;
   border-radius: 8px;
   padding: 0 8px;
   background-color: #ffffffcc;
@@ -36,4 +34,8 @@ export const LinkStyled = styled(Link)`
   width: 100%;
   text-decoration: none;
   color: #000000;
+`;
+
+export const Plug = styled.p`
+  color: #ffffffcc;
 `;

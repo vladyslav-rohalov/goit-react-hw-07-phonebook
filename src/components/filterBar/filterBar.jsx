@@ -15,13 +15,13 @@ export default function FilterBar() {
   return (
     <Bar>
       <Label>
+        <IconSearch />
         <Input
           onChange={e => dispatch(setFilter(e.target.value))}
           placeholder="Find contacts by name"
           type="text"
         ></Input>
-        <IconSearch />
-        <LinkStyled>
+        <LinkStyled to={`/add`}>
           <IconCross />
         </LinkStyled>
       </Label>

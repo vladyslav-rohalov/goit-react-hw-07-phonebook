@@ -15,7 +15,7 @@ export const Container = styled.div`
   background-color: black;
   height: 100%;
   width: 100%;
-  border-radius: 18px;
+  border-radius: 1.125em;
   background-image: url(${backdrop});
   background-size: cover;
   overflow-y: auto;
@@ -25,18 +25,18 @@ export const Container = styled.div`
   }
 `;
 
-export const BottomBlock = styled.div`
+export const HomeIconBar = styled.div`
   position: absolute;
   display: flex;
   justify-content: space-between;
   bottom: 0;
-  width: calc(100% - 20px);
+  width: calc(100% - 1.25em);
   height: 10vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   background-color: transparent;
-  padding: 0 10px 10px 10px;
+  padding: 0 0.625em 2em 0.625em;
   align-items: center;
   border-radius: 18px;
 `;

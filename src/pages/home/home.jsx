@@ -1,6 +1,7 @@
+import Time from 'components/time/time';
 import {
   Container,
-  BottomBlock,
+  HomeIconBar,
   LinkStyled,
   ButtonPhone,
   ButtonMessaage,
@@ -14,7 +15,8 @@ import {
 export default function Home() {
   return (
     <Container>
-      <BottomBlock>
+      <Time />
+      <HomeIconBar>
         <LinkStyled to="/phonebook">
           <ButtonPhone>
             <IconPhone />
@@ -38,7 +40,7 @@ export default function Home() {
             <IconYouTube />
           </ButtonMedia>
         </LinkStyled>
-      </BottomBlock>
+      </HomeIconBar>
     </Container>
   );
 }

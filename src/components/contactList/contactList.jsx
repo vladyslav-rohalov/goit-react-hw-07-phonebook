@@ -13,6 +13,7 @@ import {
   List,
   ListItem,
   LinkStyled,
+  Plug,
 } from './contactList.styled';
 
 export default function ContactList() {
@@ -33,8 +34,8 @@ export default function ContactList() {
 
   return (
     <ContactsContainer>
-      {isLoading && <p>Loading contacts...</p>}
-      {error && <p>{error}</p>}
+      {isLoading && <Plug>Loading contacts...</Plug>}
+      {error && <Plug>{error}</Plug>}
       {items.length > 0 && (
         <List>
           {filtredPhonebook.map(({ id, name }) => {

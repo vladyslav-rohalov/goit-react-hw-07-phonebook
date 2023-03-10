@@ -17,11 +17,12 @@ export const Label = styled.label`
   min-height: 4vh;
   width: 100%;
   align-items: center;
+  margin: 0 0.5em;
 `;
 
 export const Input = styled.input`
   height: calc(100% - 2px);
-  width: 65%;
+  width: 75%;
   padding: 0px 0px 0px 8px;
   border: none;
   border-radius: 8px;
@@ -33,7 +34,7 @@ export const Input = styled.input`
 `;
 
 export const IconSearch = styled(GoSearch)`
-  cursor: pointer;
+  fill: #000000;
 `;
 
 export const IconCross = styled(AiOutlinePlus)`
@@ -41,5 +42,5 @@ export const IconCross = styled(AiOutlinePlus)`
 `;
 
 export const LinkStyled = styled(Link)`
-  margin-left: 40px;
+  margin: 0 auto;
 `;
