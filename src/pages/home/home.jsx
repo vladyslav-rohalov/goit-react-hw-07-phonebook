@@ -24,19 +24,19 @@ export default function Home() {
         </LinkStyled>
 
         <LinkStyled>
-          <ButtonMessaage>
+          <ButtonMessaage disabled>
             <IconMessage />
           </ButtonMessaage>
         </LinkStyled>
 
         <LinkStyled>
-          <ButtonMedia>
+          <ButtonMedia disabled>
             <IconChrome />
           </ButtonMedia>
         </LinkStyled>
 
         <LinkStyled>
-          <ButtonMedia>
+          <ButtonMedia disabled>
             <IconYouTube />
           </ButtonMedia>
         </LinkStyled>

@@ -38,7 +38,7 @@ export const HomeIconBar = styled.div`
   background-color: transparent;
   padding: 0 0.625em 2em 0.625em;
   align-items: center;
-  border-radius: 18px;
+  border-radius: 1.1em;
 `;
 
 export const LinkStyled = styled(Link)`
@@ -46,7 +46,8 @@ export const LinkStyled = styled(Link)`
   height: 80%;
 `;
 
-const buttonDefaultSyle = `width: 100%;
+const buttonDefaultSyle = `
+width: 100%;
 height: 80%;
 border: none;
 border-radius: 25%;`;
@@ -57,34 +58,37 @@ export const ButtonPhone = styled.button`
 `;
 
 export const IconPhone = styled(BiPhone)`
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   fill: white;
 `;
 
 export const ButtonMessaage = styled.button`
   ${buttonDefaultSyle}
   background-color: #41a1ef;
+  opacity: 0.3;
 `;
 
 export const IconMessage = styled(AiOutlineMessage)`
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   fill: white;
 `;
 
 export const ButtonMedia = styled.button`
   ${buttonDefaultSyle}
   background-color: #ffffff;
+  opacity: 0.3;
 `;
 
 export const IconChrome = styled(FcGoogle)`
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   fill: white;
 `;
 export const IconYouTube = styled(AiFillYoutube)`
-  width: 40px;
-  height: 40px;
+  width: 2.5em;
+  height: 2.5em;
   fill: red;
+  opacity: 0.3;
 `;

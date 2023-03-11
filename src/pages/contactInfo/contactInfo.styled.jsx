@@ -15,14 +15,14 @@ export const ContactDetails = styled.div`
   border-radius: 0.5em;
   background-color: #ffffffcc;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-  padding: 20px 10px 0px 10px;
+  padding: 1.25em 0.6em 0px 0.6em;
 `;
 
 export const ContactAvatar = styled.img`
   display: block;
   border-radius: 50%;
   border: 3px solid #c272ce;
-  margin: 0 auto 20px;
+  margin: 0 auto 1.25em;
 `;
 
 export const ContactName = styled.h1`

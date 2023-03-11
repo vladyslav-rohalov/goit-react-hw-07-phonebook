@@ -18,7 +18,7 @@ export const AddDetails = styled.div`
   border-radius: 0.5em;
   background-color: #ffffffcc;
   box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.75);
-  padding: 1.25em 0.75em 0em 0.75em;
+  padding: 1.25em 0.6em 0em 0.6em;
 `;
 export const Title = styled.h1`
   font-size: 1.5em;
@@ -45,7 +45,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   height: 2em;
-  padding-left: 2em;
+  padding-left: 1.9em;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 0.5em;
   background-color: #ffffffcc;
@@ -69,18 +69,18 @@ export const AddButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 4em;
+  width: 8em;
   height: 2em;
   margin: 0 auto;
   background: linear-gradient(90deg, #ee82ee 0%, #673ab7 50%, #9c27b0 100%);
   cursor: pointer;
   border: none;
-  border-radius: 0.5em;
+  border-radius: 0.25em;
   box-shadow: 0 0 0.5em #333;
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   &:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 0.5em #111;
+    box-shadow: 0 0 0.25em #111;
     transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 `;

@@ -5,11 +5,11 @@ import { AiOutlinePlus } from 'react-icons/ai';
 
 export const Bar = styled.div`
   display: flex;
-  gap: 10px;
-  width: calc(100% - 20px);
+  gap: 1.25em;
+  width: calc(100% - 1.25em);
   background-color: #ffffffcc;
   margin: 3%;
-  border-radius: 8px;
+  border-radius: 0.5em;
 `;
 
 export const Label = styled.label`
@@ -23,10 +23,10 @@ export const Label = styled.label`
 export const Input = styled.input`
   height: calc(100% - 2px);
   width: 75%;
-  padding: 0px 0px 0px 8px;
+  padding: 0em 0em 0em 0.5em;
   border: none;
-  border-radius: 8px;
-  margin-right: 4px;
+  border-radius: 0.5em;
+  margin-right: 0.25em;
   background-color: transparent;
   &:focus {
     outline: none;

@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import { fetchContacts, delContact } from 'Redux/Operations';
 import { Container } from 'pages/home/home.styled';
 import IconBar from 'components/iconBar/iconBar';
+import Loader from 'components/loader/loader';
+import Error from 'components/error/error';
 import {
   ContactContainer,
   ContactDetails,
@@ -28,6 +30,8 @@ export default function ContactInfo() {
   return (
     <Container>
       <ContactContainer>
+        {isLoading && <Loader isLoading={isLoading} />}
+        {error && <Error />}
         {contact && (
           <ContactDetails>
             <ContactAvatar src={contact.avatar} alt="avatar" />
@@ -37,6 +41,7 @@ export default function ContactInfo() {
             <IconBar
               contact={contact}
               onDelClick={() => dispatch(delContact(id))}
+              id={id}
             />
           </ContactDetails>
         )}

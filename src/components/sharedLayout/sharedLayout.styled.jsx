@@ -10,15 +10,15 @@ export const Frame = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 18.75em;
   height: 80vh;
   max-height: 100vh;
-  border: 5px solid black;
-  border-radius: 25px;
+  border: 0.3em solid black;
+  border-radius: 1.5em;
   background-size: cover;
   &::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
+    width: 0em;
+    height: 0em;
   }
   &::-webkit-scrollbar-track {
     background: transparent;
@@ -28,13 +28,13 @@ export const Frame = styled.div`
     position: fixed;
     display: block;
     top: 15%;
-    left: -55px;
-    width: 100px;
-    height: 8px;
+    left: -3.4em;
+    width: 6.25em;
+    height: 0.5em;
     background: black;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-left: 10px;
+    border-bottom-right-radius: 0.4em;
+    border-bottom-left-radius: 0.4em;
+    border-left: 0.6em;
     rotate: 90deg;
   }
 `;
@@ -43,13 +43,13 @@ export const ButtonLock = styled.button`
   position: fixed;
   display: block;
   top: 15%;
-  right: -31px;
-  width: 50px;
-  height: 8px;
+  right: -2.45em;
+  width: 4em;
+  height: 0.5em;
   background: black;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-left: 10px;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  border-left: 0.7em;
   rotate: 90deg;
 `;
 
@@ -70,8 +70,8 @@ export const BackBar = styled.div`
   width: 100%;
   height: 2.5em;
   z-index: 1;
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
+  border-bottom-left-radius: 1.1em;
+  border-bottom-right-radius: 1.1em;
   align-items: center;
 `;
 

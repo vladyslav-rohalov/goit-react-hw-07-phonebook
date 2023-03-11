@@ -32,6 +32,7 @@ export const ButtonPhone = styled.button`
 export const ButtonMessage = styled.button`
   ${buttonStyle}
   background-color: #41a1ef;
+  opacity: 0.3;
 `;
 
 export const ButtonMail = styled.button`

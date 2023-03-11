@@ -10,10 +10,10 @@ export const TimeDate = styled.div`
 `;
 
 export const DisplayTime = styled.p`
-  font-size: 60px;
+  font-size: 3.75em;
   margin: 0;
 `;
 
 export const DisplayDate = styled.p`
-  font-size: 20px;
+  font-size: 1.25em;
 `;

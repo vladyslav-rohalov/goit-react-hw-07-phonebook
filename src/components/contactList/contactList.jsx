@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import FadeLoader from 'react-spinners/FadeLoader';
 import {
   getContacts,
   getIsLoading,
@@ -13,8 +14,9 @@ import {
   List,
   ListItem,
   LinkStyled,
-  Plug,
 } from './contactList.styled';
+import Error from 'components/error/error';
+import Loader from 'components/loader/loader';
 
 export default function ContactList() {
   const items = useSelector(getContacts);
@@ -34,8 +36,8 @@ export default function ContactList() {
 
   return (
     <ContactsContainer>
-      {isLoading && <Plug>Loading contacts...</Plug>}
-      {error && <Plug>{error}</Plug>}
+      {isLoading && <Loader isLoading={isLoading} />}
+      {error && <Error />}
       {items.length > 0 && (
         <List>
           {filtredPhonebook.map(({ id, name }) => {

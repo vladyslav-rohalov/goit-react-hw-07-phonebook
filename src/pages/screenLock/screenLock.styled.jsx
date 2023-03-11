@@ -8,7 +8,7 @@ export const Locked = styled.div`
   background-color: black;
   height: 100%;
   width: 100%;
-  border-radius: 18px;
+  border-radius: 1.1em;
 `;
 
 export const TimeDate = styled.div`
@@ -32,16 +32,7 @@ export const UnlockButton = styled.button`
 `;
 
 export const IconFingerPrint = styled(IoMdFingerPrint)`
-  width: 80px;
-  height: 80px;
+  width: 5em;
+  height: 5em;
   fill: white;
-`;
-
-export const DisplayTime = styled.p`
-  font-size: 60px;
-  margin: 0;
-`;
-
-export const DisplayDate = styled.p`
-  font-size: 20px;
 `;

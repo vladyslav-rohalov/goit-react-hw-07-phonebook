@@ -14,7 +14,7 @@ import {
   IconDelete,
 } from './iconBar.styled';
 
-export default function IconBar({ contact, onDelClick }) {
+export default function IconBar({ contact, onDelClick, id }) {
   return (
     <Container>
       <TagA href={`tel:${contact.phone}`}>
@@ -23,7 +23,7 @@ export default function IconBar({ contact, onDelClick }) {
         </ButtonPhone>
       </TagA>
       <LinkStyled>
-        <ButtonMessage type="button">
+        <ButtonMessage type="button" disabled>
           <IconMessage />
         </ButtonMessage>
       </LinkStyled>
@@ -32,7 +32,7 @@ export default function IconBar({ contact, onDelClick }) {
           <IconMail />
         </ButtonMail>
       </TagA>
-      <LinkStyled>
+      <LinkStyled to={`/edit/${id}`}>
         <ButtonEdit type="button">
           <IconEdit />
         </ButtonEdit>

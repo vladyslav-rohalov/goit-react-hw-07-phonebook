@@ -2,14 +2,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getContacts } from 'Redux/Selectors';
-import { addContact } from 'Redux/Operations';
+import { editContact } from 'Redux/Operations';
+import { useParams } from 'react-router-dom';
 import { Container } from 'pages/home/home.styled';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ContactAddEdit from 'components/contactAddEdit/contactAddEdit';
 
-export default function AddNewContact() {
+export default function EditContact() {
   const items = useSelector(getContacts);
+  const { id } = useParams();
+  const index = items.findIndex(contact => contact.id === id);
   const avatarPicker = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,21 +23,16 @@ export default function AddNewContact() {
     const name = form.elements.name.value;
     const phone = form.elements.number.value;
     const email = form.elements.email.value;
-    // const avatar = form.elements.avatar.files[0];
-    // const formData = new FormData();
-    // formData.append('avatar', avatar);
-
     const contact = {
       name: name,
       phone: phone,
       email: email,
-      // avatar: formData,
     };
     twinCheck(name, contact);
     form.reset();
   };
 
-  const twinCheck = (newContactName, contact) => {
+  const twinCheck = newContactName => {
     let isTwin = items.find(prevContact => {
       if (prevContact.name === newContactName) {
         toast.warn('This contact already exists', {
@@ -45,7 +43,8 @@ export default function AddNewContact() {
       return false;
     });
     if (!isTwin) {
-      dispatch(addContact(contact));
+      // console.log(items[index]);
+      dispatch(editContact(items[index]));
       navigate('/phonebook', { replace: true });
     }
     isTwin = false;
@@ -57,14 +56,14 @@ export default function AddNewContact() {
 
   return (
     <Container>
-      <ToastContainer />
       <ContactAddEdit
-        title="Add new contact"
-        titleButton="Add contact"
+        title="Edit contact"
+        titleButton="Edit contact"
         handleSubmit={handleSubmit}
         handlePick={handlePick}
         avatarPicker={avatarPicker}
       />
+      <ToastContainer />
     </Container>
   );
 }
