@@ -7,19 +7,16 @@ import {
 } from './Operations';
 
 const contactsInitialState = {
-  contacts: {
-    items: [],
-    isLoading: false,
-    error: null,
-  },
-  filter: '',
+  items: [],
+  isLoading: false,
+  error: null,
 };
 
 const handlePending = state => {
-  state.contacts.isLoading = true;
+  state.isLoading = true;
 };
 const handleRejected = (state, action) => {
-  state.contacts.isLoading = false;
+  state.isLoading = false;
   state.error = action.payload;
 };
 
@@ -36,39 +33,32 @@ const contactsSlice = createSlice({
     [editContact.rejected]: handleRejected,
     [delContact.rejected]: handleRejected,
     [fetchContacts.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      state.contacts.items = action.payload;
+      state.isLoading = false;
+      state.error = null;
+      state.items = action.payload;
     },
     [addContact.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      state.contacts.items.push(action.payload);
+      state.isLoading = false;
+      state.error = null;
+      state.items.push(action.payload);
     },
     [editContact.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      const index = state.contacts.items.findIndex(
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(
         contact => contact.id === action.payload.id
       );
-      state.contacts.items.splice(index, 1, action.payload);
+      state.items.splice(index, 1, action.payload);
     },
     [delContact.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      const index = state.contacts.items.findIndex(
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(
         contact => contact.id === action.payload.id
       );
-      state.contacts.items.splice(index, 1);
-    },
-  },
-  reducers: {
-    setFilter(state, action) {
-      state.filter = action.payload;
+      state.items.splice(index, 1);
     },
   },
 });
-
-export const { setFilter } = contactsSlice.actions;
 
 export const contactsReducer = contactsSlice.reducer;

@@ -4,7 +4,7 @@ import {
   getContacts,
   getIsLoading,
   getError,
-  getFilter,
+  getFilteredContacts,
 } from 'Redux/Selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'Redux/Operations';
@@ -22,11 +22,7 @@ export default function ContactList() {
   const isLoading = useSelector(getIsLoading);
   const error = useSelector(getError);
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
-  const normalizedFilter = filter.toLowerCase();
-  const filtredPhonebook = items.filter(contact => {
-    return contact.name.toLowerCase().includes(normalizedFilter);
-  });
+  const filtredContacts = useSelector(getFilteredContacts);
   const location = useLocation();
 
   useEffect(() => {
@@ -39,7 +35,7 @@ export default function ContactList() {
       {error && <Error />}
       {items.length > 0 && (
         <List>
-          {filtredPhonebook.map(({ id, name }) => {
+          {filtredContacts.map(({ id, name }) => {
             return (
               <ListItem key={id}>
                 <LinkStyled to={`/phonebook/${id}`} state={{ from: location }}>
