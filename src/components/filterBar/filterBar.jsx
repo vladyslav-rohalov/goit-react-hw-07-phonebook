@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'Redux/contactsSlice';
-
+import { useLocation } from 'react-router-dom';
 import {
   Bar,
   Input,
@@ -12,6 +12,8 @@ import {
 
 export default function FilterBar() {
   const dispatch = useDispatch();
+  const location = useLocation();
+
   return (
     <Bar>
       <Label>
@@ -21,7 +23,7 @@ export default function FilterBar() {
           placeholder="Find contacts by name"
           type="text"
         ></Input>
-        <LinkStyled to={`/add`}>
+        <LinkStyled to={`/add`} state={{ from: location }}>
           <IconCross />
         </LinkStyled>
       </Label>

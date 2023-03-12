@@ -1,4 +1,5 @@
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/macro';
+import { keyframes } from '@emotion/react';
 import { IoMdFingerPrint } from 'react-icons/io';
 
 export const Locked = styled.div`
@@ -20,6 +21,19 @@ export const TimeDate = styled.div`
   color: white;
 `;
 
+const ring = keyframes`
+0% {
+  width: 5em;
+  height: 5em;
+  opacity: 1;
+}
+100% {
+  width: 8em;
+  height: 8em;
+  opacity: 0;
+}
+  `;
+
 export const UnlockButton = styled.button`
   position: absolute;
   top: 90%;
@@ -29,10 +43,22 @@ export const UnlockButton = styled.button`
   padding: 0;
   border: none;
   border-radius: 50%;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 5em;
+    height: 5em;
+    border-radius: 100%;
+    border: 0.2em solid #ffffffcc;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ${ring} 5s infinite;
+  }
 `;
 
 export const IconFingerPrint = styled(IoMdFingerPrint)`
   width: 5em;
   height: 5em;
-  fill: white;
+  fill: #ffffff;
 `;

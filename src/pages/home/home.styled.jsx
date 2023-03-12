@@ -55,6 +55,7 @@ border-radius: 25%;`;
 export const ButtonPhone = styled.button`
   ${buttonDefaultSyle}
   background-color: #3ad364;
+  cursor: pointer;
 `;
 
 export const IconPhone = styled(BiPhone)`
@@ -67,6 +68,7 @@ export const ButtonMessaage = styled.button`
   ${buttonDefaultSyle}
   background-color: #41a1ef;
   opacity: 0.3;
+  cursor: pointer;
 `;
 
 export const IconMessage = styled(AiOutlineMessage)`
@@ -78,17 +80,24 @@ export const IconMessage = styled(AiOutlineMessage)`
 export const ButtonMedia = styled.button`
   ${buttonDefaultSyle}
   background-color: #ffffff;
+  cursor: pointer;
   opacity: 0.3;
 `;
 
 export const IconChrome = styled(FcGoogle)`
   width: 2.5em;
   height: 2.5em;
-  fill: white;
+  fill: #ffffffcc;
 `;
+
+export const ButtonYoutube = styled.button`
+  ${buttonDefaultSyle}
+  background-color: #ffffff;
+  cursor: pointer;
+`;
+
 export const IconYouTube = styled(AiFillYoutube)`
   width: 2.5em;
   height: 2.5em;
   fill: red;
-  opacity: 0.3;
 `;

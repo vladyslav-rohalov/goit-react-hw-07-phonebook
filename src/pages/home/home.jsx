@@ -8,6 +8,7 @@ import {
   IconPhone,
   IconMessage,
   ButtonMedia,
+  ButtonYoutube,
   IconChrome,
   IconYouTube,
 } from './home.styled';
@@ -35,10 +36,10 @@ export default function Home() {
           </ButtonMedia>
         </LinkStyled>
 
-        <LinkStyled>
-          <ButtonMedia disabled>
+        <LinkStyled to="/youtube">
+          <ButtonYoutube>
             <IconYouTube />
-          </ButtonMedia>
+          </ButtonYoutube>
         </LinkStyled>
       </HomeIconBar>
     </Container>

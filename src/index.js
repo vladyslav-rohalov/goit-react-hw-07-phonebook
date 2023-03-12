@@ -6,11 +6,9 @@ import { store } from 'Redux/Store';
 import App from 'components/App';
 import './index.css';
 
-// <BrowserRouter basename="goit-react-hw-07-phonebook/">
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="goit-react-hw-07-phonebook/">
       <Provider store={store}>
         <App />
       </Provider>

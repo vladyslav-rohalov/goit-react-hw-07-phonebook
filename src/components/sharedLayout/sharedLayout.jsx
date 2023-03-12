@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Frame,
   Camera,
@@ -12,6 +12,8 @@ import {
 } from './sharedLayout.styled';
 
 export default function SharedLayout() {
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/home';
   return (
     <Frame>
       <Camera />
@@ -28,7 +30,7 @@ export default function SharedLayout() {
             <IconHome />
           </Button>
         </Link>
-        <Link>
+        <Link to={backLinkHref}>
           <Button>
             <IconBack />
           </Button>

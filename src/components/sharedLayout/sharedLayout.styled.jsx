@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 import { BsCircleFill } from 'react-icons/bs';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { RiHomeLine } from 'react-icons/ri';
@@ -39,6 +40,27 @@ export const Frame = styled.div`
   }
 `;
 
+const button = keyframes`
+0% {
+  width: 5%;
+  height: 10%;
+  bottom: 20%;
+  opacity: 0;
+}
+50% {
+  width: 50%;
+  height: 20%;
+  bottom: 20%;
+  opacity: 1;
+}
+
+100% {
+  bottom: -20%;
+  opacity: 0;
+
+}
+`;
+
 export const ButtonLock = styled.button`
   position: fixed;
   display: block;
@@ -47,10 +69,24 @@ export const ButtonLock = styled.button`
   width: 4em;
   height: 0.5em;
   background: black;
+  border: none;
   border-top-left-radius: 0.3em;
   border-top-right-radius: 0.3em;
   border-left: 0.7em;
   rotate: 90deg;
+  cursor: pointer;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 25%;
+    border-top-left-radius: 0.3em;
+    border-top-right-radius: 0.3em;
+    background-color: #ffffffcc;
+    bottom: 20%;
+    transform: translate(-50%, -50%);
+    animation: ${button} 5s infinite;
+  }
 `;
 
 export const Camera = styled(BsCircleFill)`

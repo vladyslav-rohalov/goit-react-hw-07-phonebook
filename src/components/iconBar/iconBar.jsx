@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import {
   Container,
   ButtonPhone,
@@ -15,6 +16,7 @@ import {
 } from './iconBar.styled';
 
 export default function IconBar({ contact, onDelClick, id }) {
+  const location = useLocation();
   return (
     <Container>
       <TagA href={`tel:${contact.phone}`}>
@@ -32,7 +34,7 @@ export default function IconBar({ contact, onDelClick, id }) {
           <IconMail />
         </ButtonMail>
       </TagA>
-      <LinkStyled to={`/edit/${id}`}>
+      <LinkStyled to={`/edit/${id}`} state={{ from: location }}>
         <ButtonEdit type="button">
           <IconEdit />
         </ButtonEdit>
