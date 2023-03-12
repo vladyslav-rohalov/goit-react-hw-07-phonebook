@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getContacts, getIsLoading, getError } from 'Redux/Selectors';
+import { selectContacts, selectIsLoading, selectError } from 'Redux/Selectors';
 import { useEffect } from 'react';
 import { fetchContacts, delContact } from 'Redux/Operations';
 import { Container } from 'pages/home/home.styled';
@@ -16,9 +16,9 @@ import {
 } from './contactInfo.styled';
 
 export default function ContactInfo() {
-  const items = useSelector(getContacts);
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const items = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
   const { id } = useParams();
   const contact = items.find(item => item.id === id);

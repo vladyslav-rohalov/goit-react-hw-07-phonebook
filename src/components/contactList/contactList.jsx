@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import {
-  getContacts,
-  getIsLoading,
-  getError,
-  getFilteredContacts,
+  selectContacts,
+  selectIsLoading,
+  selectError,
+  selectFilteredContacts,
 } from 'Redux/Selectors';
 import { useEffect } from 'react';
 import { fetchContacts } from 'Redux/Operations';
@@ -18,11 +18,11 @@ import Error from 'components/error/error';
 import Loader from 'components/loader/loader';
 
 export default function ContactList() {
-  const items = useSelector(getContacts);
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const items = useSelector(selectContacts);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
   const dispatch = useDispatch();
-  const filtredContacts = useSelector(getFilteredContacts);
+  const filtredContacts = useSelector(selectFilteredContacts);
   const location = useLocation();
 
   useEffect(() => {

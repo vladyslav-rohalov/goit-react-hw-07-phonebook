@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getContacts } from 'Redux/Selectors';
+import { selectContacts } from 'Redux/Selectors';
 import { addContact } from 'Redux/Operations';
 import { Container } from 'pages/home/home.styled';
 import { toast, ToastContainer } from 'react-toastify';
@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ContactAddEdit from 'components/contactAddEdit/contactAddEdit';
 
 export default function AddNewContact() {
-  const items = useSelector(getContacts);
+  const items = useSelector(selectContacts);
   const avatarPicker = useRef(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();

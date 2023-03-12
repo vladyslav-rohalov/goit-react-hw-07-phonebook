@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { useRef } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getContacts } from 'Redux/Selectors';
+import { selectContacts } from 'Redux/Selectors';
 import { fetchContacts, editContact } from 'Redux/Operations';
 import { useParams } from 'react-router-dom';
 import { Container } from 'pages/home/home.styled';
@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ContactAddEdit from 'components/contactAddEdit/contactAddEdit';
 
 export default function EditContact() {
-  const items = useSelector(getContacts);
+  const items = useSelector(selectContacts);
   const { id } = useParams();
   const contact = items.find(item => item.id === id);
   const dispatch = useDispatch();
